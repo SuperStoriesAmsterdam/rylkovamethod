@@ -5,7 +5,9 @@
    rhythm; calm from a settled sage/sand/clay palette and generous space.
 
    Intended production type (swap to self-hosted .woff2):
-     Display : a warm geometric-humanist sans (e.g. Aktiv Grotesk / GT Walsheim)
+     Display : a warm humanist face with calligraphic stress, NOT a neutral
+               grotesque (e.g. Optima / Marat Sans / GT Flexa) — editorial and
+               calm, deliberately un-"SaaS". Prototype leads with Optima (macOS).
      Accent  : an italic serif for human/personal lines (e.g. Tiempos Italic)
    ========================================================================== */
 
@@ -18,9 +20,9 @@
   --color-muted:   #6B6A5C;
   --color-line:    #CFC7B6;
 
-  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Optima", "Gill Sans", "Gill Sans Nova", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --font-serif:   "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
-  --font-body:    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body:    "Avenir Next", "Avenir", "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
 
   --text-sm:   0.8125rem;
   --text-base: 1.0625rem;
@@ -70,8 +72,8 @@ a { color: inherit; }
 
 /* ---- hero --------------------------------------------------------------- */
 .hero { padding: var(--space-12) 0 var(--space-16); text-align: center; }
-.hero__title { font-family: var(--font-display); font-size: var(--text-hero); letter-spacing: -0.02em;
-  max-width: 16ch; margin: 0 auto var(--space-6); font-weight: 700; }
+.hero__title { font-family: var(--font-display); font-size: var(--text-hero); letter-spacing: -0.005em;
+  max-width: 16ch; margin: 0 auto var(--space-6); font-weight: 600; }
 .hero__lead { font-size: var(--text-lg); max-width: 52ch; margin: 0 auto var(--space-4); color: var(--color-muted); }
 .hero__proof { font-size: var(--text-sm); color: var(--color-sage-2); letter-spacing: 0.03em; }
 
@@ -89,7 +91,7 @@ a { color: inherit; }
 .section { padding: var(--space-16) 0; }
 .section--surface { background: var(--color-surface); }
 .section__head { max-width: 56ch; margin: 0 auto var(--space-8); text-align: center; }
-.section__head h2 { font-family: var(--font-display); font-size: var(--text-2xl); letter-spacing: -0.01em; }
+.section__head h2 { font-family: var(--font-display); font-size: var(--text-2xl); letter-spacing: 0; }
 
 /* layered depths */
 .depths { display: grid; grid-template-columns: minmax(0,1fr); gap: var(--space-4); max-width: 760px; margin: 0 auto; }

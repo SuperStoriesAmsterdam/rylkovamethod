@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-02 (later)
+
+### Route C
+- Typography: replaced the `system-ui` display stack (read as generic "SaaS")
+  with a warm humanist face — Optima-led (Gill Sans / Avenir Next fallbacks),
+  body switched to Avenir Next. Loosened hero/heading letter-spacing to suit it.
+  Breathing circle unchanged.
+
 ## 2026-06-02
 
 ### Initial build
