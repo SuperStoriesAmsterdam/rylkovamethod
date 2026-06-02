@@ -1,0 +1,146 @@
+/* ============================================================================
+   ROUTE C — "Three Depths"
+   Regulated nervous-system aesthetic. Soft, contemporary, breath-paced.
+   Person-first warmth leads. Energy from confident scale + a slow breathing
+   rhythm; calm from a settled sage/sand/clay palette and generous space.
+
+   Intended production type (swap to self-hosted .woff2):
+     Display : a warm geometric-humanist sans (e.g. Aktiv Grotesk / GT Walsheim)
+     Accent  : an italic serif for human/personal lines (e.g. Tiempos Italic)
+   ========================================================================== */
+
+:root {
+  --color-bg:      #ECE7DD;  /* warm linen — the calm neutral */
+  --color-surface: #E0D9CB;  /* deeper linen — panels */
+  --color-sage:    #3C4A41;  /* deep sage ink — text */
+  --color-sage-2:  #7E927F;  /* living sage — secondary accent */
+  --color-clay:    #C2784E;  /* warm clay — the energetic accent */
+  --color-muted:   #6B6A5C;
+  --color-line:    #CFC7B6;
+
+  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif:   "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-body:    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --text-sm:   0.8125rem;
+  --text-base: 1.0625rem;
+  --text-lg:   clamp(1.2rem, 1.7vw, 1.5rem);
+  --text-xl:   clamp(1.5rem, 2.4vw, 2.1rem);
+  --text-2xl:  clamp(2.1rem, 4.5vw, 3.4rem);
+  --text-hero: clamp(3rem, 8vw, 7rem);
+
+  --space-2: 16px; --space-3: 24px; --space-4: 32px;
+  --space-6: 48px; --space-8: 64px; --space-12: 96px; --space-16: 128px;
+  --wrap: 1200px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-sage);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+}
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--space-3); }
+@media (min-width: 1024px) { .wrap { padding: 0 var(--space-6); } }
+
+h1, h2, h3 { margin: 0; line-height: 1.08; font-weight: 600; }
+p { margin: 0 0 1em; }
+a { color: inherit; }
+
+.eyebrow { font-size: var(--text-sm); letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-sage-2); margin: 0 0 var(--space-3); font-weight: 600; }
+.serif-accent { font-family: var(--font-serif); font-style: italic; color: var(--color-clay); font-weight: 400; }
+
+/* breath-paced reveal */
+.breathe { opacity: 0; transform: translateY(18px); transition: opacity 1100ms ease, transform 1100ms ease; }
+.breathe.in { opacity: 1; transform: none; }
+
+/* ---- header ------------------------------------------------------------- */
+.site-header { display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-4) 0; }
+.wordmark { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.01em; }
+.site-nav { display: none; gap: var(--space-4); font-size: var(--text-sm); letter-spacing: 0.04em; }
+.site-nav a { text-decoration: none; color: var(--color-muted); transition: color 200ms ease; }
+.site-nav a:hover { color: var(--color-clay); }
+@media (min-width: 768px) { .site-nav { display: flex; } }
+
+/* ---- hero --------------------------------------------------------------- */
+.hero { padding: var(--space-12) 0 var(--space-16); text-align: center; }
+.hero__title { font-family: var(--font-display); font-size: var(--text-hero); letter-spacing: -0.02em;
+  max-width: 16ch; margin: 0 auto var(--space-6); font-weight: 700; }
+.hero__lead { font-size: var(--text-lg); max-width: 52ch; margin: 0 auto var(--space-4); color: var(--color-muted); }
+.hero__proof { font-size: var(--text-sm); color: var(--color-sage-2); letter-spacing: 0.03em; }
+
+/* breathing orb — the calm, living visual */
+.orb-wrap { display: flex; justify-content: center; margin: var(--space-8) 0; }
+.orb { width: clamp(160px, 28vw, 280px); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, var(--color-sage-2), var(--color-sage) 70%);
+  animation: breathe-pulse 7s ease-in-out infinite; }
+@keyframes breathe-pulse {
+  0%, 100% { transform: scale(0.94); box-shadow: 0 0 0 0 rgba(126,146,127,0.4); }
+  50%      { transform: scale(1.0);  box-shadow: 0 0 0 26px rgba(126,146,127,0); }
+}
+
+/* ---- sections ----------------------------------------------------------- */
+.section { padding: var(--space-16) 0; }
+.section--surface { background: var(--color-surface); }
+.section__head { max-width: 56ch; margin: 0 auto var(--space-8); text-align: center; }
+.section__head h2 { font-family: var(--font-display); font-size: var(--text-2xl); letter-spacing: -0.01em; }
+
+/* layered depths */
+.depths { display: grid; grid-template-columns: minmax(0,1fr); gap: var(--space-4); max-width: 760px; margin: 0 auto; }
+.depth { display: grid; grid-template-columns: 56px minmax(0,1fr); gap: var(--space-4); align-items: start;
+  background: var(--color-bg); border: 1px solid var(--color-line); border-radius: 18px; padding: var(--space-6); }
+.section--surface .depth { background: var(--color-surface); }
+.depth__dot { width: 44px; height: 44px; border-radius: 50%; }
+.depth:nth-child(1) .depth__dot { background: var(--color-clay); }
+.depth:nth-child(2) .depth__dot { background: var(--color-sage-2); }
+.depth:nth-child(3) .depth__dot { background: var(--color-sage); }
+.depth h3 { font-family: var(--font-display); font-size: var(--text-xl); }
+.depth p { color: var(--color-muted); margin: var(--space-2) 0 0; }
+.depth__k { font-family: var(--font-serif); font-style: italic; color: var(--color-clay); }
+
+/* value trio */
+.values { display: grid; grid-template-columns: minmax(0,1fr); gap: var(--space-6); }
+@media (min-width: 768px) { .values { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+.value { text-align: center; }
+.value h3 { font-family: var(--font-display); font-size: var(--text-xl); margin: 0 0 var(--space-2); }
+.value p { color: var(--color-muted); margin: 0; }
+
+/* audience */
+.audience__grid { display: grid; grid-template-columns: minmax(0,1fr); gap: var(--space-4); }
+@media (min-width: 768px) { .audience__grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+.audience__cell { background: var(--color-bg); border-radius: 18px; padding: var(--space-6); text-align: center; }
+.audience__cell .eyebrow { color: var(--color-clay); }
+.audience__cell p { margin: 0; font-size: var(--text-lg); }
+
+/* CTA */
+.cta { text-align: center; }
+.cta h2 { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: var(--text-2xl);
+  max-width: 22ch; margin: 0 auto var(--space-3); color: var(--color-sage); }
+.cta p { color: var(--color-muted); max-width: 46ch; margin: 0 auto var(--space-6); }
+.btn { display: inline-block; font-size: var(--text-sm); letter-spacing: 0.05em; text-transform: uppercase;
+  text-decoration: none; padding: 15px 30px; border-radius: 999px; transition: background 200ms ease, color 200ms ease; }
+.btn--primary { background: var(--color-clay); color: var(--color-bg); font-weight: 600; }
+.btn--primary:hover { background: var(--color-sage); }
+.btn--ghost { border: 1px solid var(--color-sage); margin-left: var(--space-2); }
+.btn--ghost:hover { background: var(--color-sage); color: var(--color-bg); }
+.lead-magnet { margin-top: var(--space-6); font-size: var(--text-sm); color: var(--color-sage-2); }
+
+/* footer */
+.site-footer { padding: var(--space-8) 0; font-size: var(--text-sm); color: var(--color-muted);
+  border-top: 1px solid var(--color-line); }
+.site-footer a { color: var(--color-sage); text-decoration: none; }
+.site-footer a:hover { color: var(--color-clay); }
+.site-footer__row { display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: space-between; }
+
+:focus-visible { outline: 2px solid var(--color-clay); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
+  .breathe { opacity: 1; transform: none; }
+}

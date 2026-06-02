@@ -1,0 +1,8 @@
+# Keep the build context lean and the served site clean.
+.git
+.gitignore
+**/.DS_Store
+**/*.md
+.env
+.env.example
+node_modules

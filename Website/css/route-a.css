@@ -1,0 +1,161 @@
+/* ============================================================================
+   ROUTE A — "The Anatomy of Touch"
+   Editorial / clinical-warm. Mechanism foregrounded, rendered warm.
+   Energy from typographic contrast + one living color (clay). Calm via space.
+
+   Intended production type (swap to self-hosted .woff2):
+     Display : a warm high-legibility serif (e.g. Freight Text / Lyon / Tiempos)
+     Body    : a humanist sans (e.g. Söhne / Untitled Sans / Inter)
+   Stacks below approximate that feel with system fonts for the prototype.
+   ========================================================================== */
+
+:root {
+  --color-bg:        #F4F0E8;  /* bone — warm paper, the neutral */
+  --color-surface:   #EAE3D6;  /* deeper bone — panels, cards */
+  --color-ink:       #211D17;  /* warm near-black — all text */
+  --color-muted:     #6E665A;  /* ink, softened — metadata, captions */
+  --color-accent:    #AB5238;  /* clay — the single living color */
+  --color-line:      #D7CFC0;  /* hairline rules */
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-body:    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --text-sm:   0.8125rem;
+  --text-base: 1rem;
+  --text-lg:   clamp(1.15rem, 1.6vw, 1.4rem);
+  --text-xl:   clamp(1.5rem, 2.4vw, 2rem);
+  --text-2xl:  clamp(2rem, 4vw, 3rem);
+  --text-hero: clamp(2.8rem, 7vw, 6rem);
+
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+
+  --wrap: 1240px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--space-3); }
+@media (min-width: 1024px) { .wrap { padding: 0 var(--space-6); } }
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.06; margin: 0; }
+p { margin: 0 0 1em; }
+a { color: inherit; }
+
+.accent { color: var(--color-accent); }
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0 0 var(--space-3);
+}
+
+/* ---- header / nav ------------------------------------------------------- */
+.site-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+}
+.wordmark span { display: block; font-family: var(--font-body); font-size: var(--text-sm);
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted); margin-top: 4px; }
+.site-nav { display: none; gap: var(--space-4); font-size: var(--text-sm);
+  letter-spacing: 0.04em; text-transform: uppercase; }
+.site-nav a { text-decoration: none; transition: color 200ms ease; }
+.site-nav a:hover { color: var(--color-accent); }
+@media (min-width: 768px) { .site-nav { display: flex; } }
+
+/* ---- hero --------------------------------------------------------------- */
+.hero { padding: var(--space-12) 0 var(--space-8); }
+.hero__inner { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6);
+  align-items: center; }
+@media (min-width: 1024px) {
+  .hero__inner { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-8); }
+}
+.hero__title { font-size: var(--text-hero); letter-spacing: -0.01em; margin-bottom: var(--space-4); }
+.hero__title em { font-style: italic; }
+.hero__lead { font-size: var(--text-lg); max-width: 34ch; color: var(--color-ink); }
+.hero__proof { margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-muted);
+  letter-spacing: 0.02em; }
+
+/* media placeholder — duotone block w/ fascia line motif */
+.media {
+  position: relative; aspect-ratio: 4 / 5; overflow: hidden;
+  background:
+    radial-gradient(120% 120% at 70% 20%, #C9886F 0%, #8A4632 55%, #4A2418 100%);
+}
+.media--wide { aspect-ratio: 16 / 10; }
+.media svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.55; }
+.media__tag {
+  position: absolute; left: 14px; bottom: 12px;
+  font-size: var(--text-sm); color: #F4F0E8; letter-spacing: 0.04em; opacity: 0.85;
+}
+
+/* ---- value blocks ------------------------------------------------------- */
+.section { padding: var(--space-12) 0; border-top: 1px solid var(--color-line); }
+.section__head { max-width: 52ch; margin-bottom: var(--space-8); }
+.section__head h2 { font-size: var(--text-2xl); margin-bottom: var(--space-3); }
+
+.values { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+@media (min-width: 768px) { .values { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.value { border-top: 2px solid var(--color-accent); padding-top: var(--space-3); }
+.value__num { font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-accent);
+  letter-spacing: 0.1em; }
+.value h3 { font-size: var(--text-xl); margin: var(--space-2) 0; }
+.value p { color: var(--color-muted); margin: 0; }
+
+/* ---- audience strip ----------------------------------------------------- */
+.audience { background: var(--color-surface); }
+.audience .audience__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1px;
+  background: var(--color-line); border: 1px solid var(--color-line); }
+@media (min-width: 768px) { .audience .audience__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.audience__cell { background: var(--color-surface); padding: var(--space-6) var(--space-4); }
+.audience__cell .eyebrow { color: var(--color-accent); margin-bottom: var(--space-2); }
+.audience__cell p { margin: 0; font-size: var(--text-lg); font-family: var(--font-display); line-height: 1.25; }
+
+/* ---- CTA ---------------------------------------------------------------- */
+.cta { text-align: center; }
+.cta h2 { font-size: var(--text-2xl); max-width: 22ch; margin: 0 auto var(--space-3); }
+.cta p { color: var(--color-muted); max-width: 44ch; margin: 0 auto var(--space-6); }
+.btn {
+  display: inline-block; font-family: var(--font-body); font-size: var(--text-sm);
+  letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+  padding: 14px 26px; transition: background 200ms ease, color 200ms ease;
+}
+.btn--primary { background: var(--color-accent); color: var(--color-bg); }
+.btn--primary:hover { background: var(--color-ink); }
+.btn--ghost { border: 1px solid var(--color-ink); margin-left: var(--space-2); }
+.btn--ghost:hover { background: var(--color-ink); color: var(--color-bg); }
+.lead-magnet { margin-top: var(--space-6); font-size: var(--text-sm); color: var(--color-muted); }
+
+/* ---- footer ------------------------------------------------------------- */
+.site-footer { border-top: 1px solid var(--color-line); padding: var(--space-8) 0;
+  font-size: var(--text-sm); color: var(--color-muted); }
+.site-footer a { color: var(--color-ink); text-decoration: none; }
+.site-footer a:hover { color: var(--color-accent); }
+.site-footer__row { display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: space-between; }
+
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

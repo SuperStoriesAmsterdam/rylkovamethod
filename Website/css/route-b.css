@@ -1,0 +1,152 @@
+/* ============================================================================
+   ROUTE B — "Magic / Mechanism"
+   A diptych. The layout itself argues the spine: the felt (warm, organic) meets
+   the named (dark, precise, anatomical). Energy from contrast; calm from space.
+   Most authoritative / dramatic of the three.
+
+   Intended production type (swap to self-hosted .woff2):
+     Display : a tight modern grotesque (e.g. Neue Haas Grotesk / Söhne) for the
+               "mechanism" voice, paired with an italic serif accent for "magic"
+               (e.g. Tiempos Italic).
+   ========================================================================== */
+
+:root {
+  --color-dark:    #16221E;  /* deep forest-slate — the "mechanism" ground */
+  --color-darker:  #0E1714;
+  --color-sand:    #E7DAC6;  /* warm sand — the "magic" ground */
+  --color-cream:   #F1EADC;  /* light text on dark */
+  --color-ink:     #1C2723;  /* dark text on sand */
+  --color-muted-d: #9DACA3;  /* muted on dark */
+  --color-muted-l: #6E6452;  /* muted on sand */
+  --color-gold:    #C9A24B;  /* the accent — gilt, precise */
+
+  --font-display: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-serif:   "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-body:    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --text-sm:   0.8125rem;
+  --text-base: 1rem;
+  --text-lg:   clamp(1.15rem, 1.6vw, 1.4rem);
+  --text-xl:   clamp(1.4rem, 2.2vw, 1.9rem);
+  --text-2xl:  clamp(2rem, 4vw, 3.2rem);
+  --text-hero: clamp(2.6rem, 6.5vw, 5.6rem);
+
+  --space-2: 16px; --space-3: 24px; --space-4: 32px;
+  --space-6: 48px; --space-8: 64px; --space-12: 96px;
+  --wrap: 1320px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  margin: 0;
+  background: var(--color-dark);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--space-3); }
+@media (min-width: 1024px) { .wrap { padding: 0 var(--space-6); } }
+
+h1, h2, h3 { margin: 0; line-height: 1.05; font-weight: 600; }
+p { margin: 0 0 1em; }
+a { color: inherit; }
+
+.eyebrow {
+  font-size: var(--text-sm); letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-gold); margin: 0 0 var(--space-3); font-weight: 600;
+}
+
+/* ---- header ------------------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-3) 0; background: var(--color-darker);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.wordmark { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.02em; font-size: 1.15rem; }
+.wordmark b { color: var(--color-gold); }
+.site-nav { display: none; gap: var(--space-4); font-size: var(--text-sm);
+  letter-spacing: 0.06em; text-transform: uppercase; }
+.site-nav a { text-decoration: none; color: var(--color-muted-d); transition: color 200ms ease; }
+.site-nav a:hover { color: var(--color-cream); }
+@media (min-width: 768px) { .site-nav { display: flex; } }
+
+/* ---- hero diptych ------------------------------------------------------- */
+.diptych { display: grid; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .diptych { grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 78vh; } }
+
+.panel { padding: var(--space-12) var(--space-6); display: flex; flex-direction: column; justify-content: center; }
+.panel--magic { background: var(--color-sand); color: var(--color-ink); position: relative; overflow: hidden; }
+.panel--mech  { background: var(--color-dark); color: var(--color-cream); position: relative; overflow: hidden; }
+
+.panel__label { font-size: var(--text-sm); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: var(--space-4); }
+.panel--magic .panel__label { color: var(--color-muted-l); }
+.panel--mech  .panel__label { color: var(--color-gold); }
+
+.panel--magic .panel__title { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: var(--text-hero); }
+.panel--mech  .panel__title { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.01em; font-size: var(--text-hero); text-transform: uppercase; }
+.panel__body { font-size: var(--text-lg); max-width: 32ch; margin-top: var(--space-4); }
+.panel--magic .panel__body { color: var(--color-muted-l); }
+.panel--mech  .panel__body { color: var(--color-muted-d); }
+
+/* decorative fascia/anatomy lines bleeding across the seam */
+.panel svg.lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.panel--magic svg.lines { opacity: 0.22; stroke: var(--color-ink); }
+.panel--mech  svg.lines { opacity: 0.28; stroke: var(--color-gold); }
+
+.seam-line { text-align: center; padding: var(--space-6) var(--space-3);
+  font-family: var(--font-serif); font-size: var(--text-xl); }
+.seam-line em { color: var(--color-gold); font-style: italic; }
+
+/* ---- value blocks (three depths) --------------------------------------- */
+.section { padding: var(--space-12) 0; }
+.section--alt { background: var(--color-darker); }
+.section__head { max-width: 56ch; margin-bottom: var(--space-8); }
+.section__head h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-2xl); letter-spacing: -0.01em; }
+
+.layers { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
+@media (min-width: 768px) { .layers { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.layer { border: 1px solid rgba(255,255,255,0.12); padding: var(--space-6) var(--space-4); }
+.layer__k { font-family: var(--font-serif); font-style: italic; color: var(--color-gold); font-size: var(--text-lg); }
+.layer h3 { font-family: var(--font-display); font-size: var(--text-xl); margin: var(--space-2) 0; }
+.layer p { color: var(--color-muted-d); margin: 0; }
+.layer__note { display: block; margin-top: var(--space-3); font-size: var(--text-sm); letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--color-gold); }
+
+/* ---- audience strip ----------------------------------------------------- */
+.audience__grid { display: grid; grid-template-columns: minmax(0,1fr); gap: var(--space-4); }
+@media (min-width: 768px) { .audience__grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+.audience__cell .eyebrow { margin-bottom: var(--space-2); }
+.audience__cell p { font-size: var(--text-lg); font-family: var(--font-serif); margin: 0; }
+
+/* ---- proof bar ---------------------------------------------------------- */
+.proof { border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding: var(--space-4) 0; font-size: var(--text-sm); color: var(--color-muted-d);
+  letter-spacing: 0.04em; text-align: center; }
+
+/* ---- CTA ---------------------------------------------------------------- */
+.cta { text-align: center; }
+.cta h2 { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: var(--text-2xl);
+  max-width: 24ch; margin: 0 auto var(--space-3); }
+.cta p { color: var(--color-muted-d); max-width: 46ch; margin: 0 auto var(--space-6); }
+.btn { display: inline-block; font-size: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; padding: 15px 28px; transition: background 200ms ease, color 200ms ease; }
+.btn--primary { background: var(--color-gold); color: var(--color-darker); font-weight: 600; }
+.btn--primary:hover { background: var(--color-cream); }
+.btn--ghost { border: 1px solid var(--color-muted-d); margin-left: var(--space-2); color: var(--color-cream); }
+.btn--ghost:hover { border-color: var(--color-gold); color: var(--color-gold); }
+.lead-magnet { margin-top: var(--space-6); font-size: var(--text-sm); color: var(--color-muted-d); }
+
+/* ---- footer ------------------------------------------------------------- */
+.site-footer { padding: var(--space-8) 0; font-size: var(--text-sm); color: var(--color-muted-d);
+  border-top: 1px solid rgba(255,255,255,0.08); }
+.site-footer a { color: var(--color-cream); text-decoration: none; }
+.site-footer a:hover { color: var(--color-gold); }
+.site-footer__row { display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: space-between; }
+
+:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

@@ -1,0 +1,7 @@
+.env
+.DS_Store
+**/.DS_Store
+node_modules/
+media/
+# Production photography is delivered via CDN/R2, not committed.
+# (Inline SVG placeholders in the current build are fine to commit.)

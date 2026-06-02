@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Rylkova Method — Three Routes</title>
+  <meta name="description" content="Three design directions for The Rylkova Method website. For review.">
+  <style>
+    :root{
+      --ink:#211D17; --bg:#F4F0E8; --muted:#6E665A; --line:#D7CFC0; --accent:#AB5238;
+      --font:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+    header{padding:64px 0 32px;border-bottom:1px solid var(--line)}
+    .eyebrow{font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+    h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.08;margin:0 0 16px}
+    h1 em{font-style:italic;color:var(--accent)}
+    .sub{max-width:60ch;color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;padding:48px 0 64px}
+    @media(min-width:820px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .card{display:flex;flex-direction:column;border:1px solid var(--line);background:#fff;text-decoration:none;color:inherit;overflow:hidden;transition:transform 180ms ease,box-shadow 180ms ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.10)}
+    .swatch{height:120px;display:flex}
+    .swatch span{flex:1}
+    .a1{background:#F4F0E8}.a2{background:#AB5238}.a3{background:#211D17}
+    .b1{background:#E7DAC6}.b2{background:#16221E}.b3{background:#C9A24B}
+    .c1{background:#ECE7DD}.c2{background:#7E927F}.c3{background:#C2784E}
+    .card__body{padding:24px}
+    .tag{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+    .card h2{font-family:var(--serif);font-weight:400;font-size:1.4rem;margin:0 0 8px;line-height:1.15}
+    .card p{font-size:.95rem;color:var(--muted);margin:0 0 16px}
+    .card .open{font-size:.8125rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+    .note{padding:0 0 64px;color:var(--muted);font-size:.95rem;max-width:70ch}
+    .note code{background:#fff;border:1px solid var(--line);padding:2px 6px}
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <p class="eyebrow">The Rylkova Method · website directions · for review</p>
+    <h1>Three routes for the same spine: <em>when the magic becomes mechanism.</em></h1>
+    <p class="sub">Each route is professional, authoritative, energetic and calm — but resolves that tension a different way. Open each, leave notes with the pencil (bottom-right), then “Copy notes” into the chat.</p>
+  </div></header>
+
+  <div class="wrap">
+    <div class="grid">
+      <a class="card" href="route-a.html">
+        <div class="swatch"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+        <div class="card__body">
+          <p class="tag">Route A</p>
+          <h2>The Anatomy of Touch</h2>
+          <p>Editorial, clinical-warm. Mechanism foregrounded and made beautiful. Calm authority from serif type, bone paper, and one living clay accent.</p>
+          <span class="open">View Route A →</span>
+        </div>
+      </a>
+      <a class="card" href="route-b.html">
+        <div class="swatch"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+        <div class="card__body">
+          <p class="tag">Route B</p>
+          <h2>Magic / Mechanism</h2>
+          <p>A diptych — the layout itself argues the positioning. The felt meets the named: warm sand against deep forest, gilt accents. The most dramatic and authoritative.</p>
+          <span class="open">View Route B →</span>
+        </div>
+      </a>
+      <a class="card" href="route-c.html">
+        <div class="swatch"><span class="c1"></span><span class="c2"></span><span class="c3"></span></div>
+        <div class="card__body">
+          <p class="tag">Route C</p>
+          <h2>Three Depths</h2>
+          <p>A regulated nervous-system aesthetic. Soft, contemporary, breath-paced motion. Person-first warmth leads; sage, linen and clay settle the eye.</p>
+          <span class="open">View Route C →</span>
+        </div>
+      </a>
+    </div>
+    <p class="note">These are direction explorations, not final copy. They use system-font stacks that approximate the intended typefaces — real <code>.woff2</code> fonts and Yulia’s photography get swapped in once chosen. The chosen route becomes the master <code>DESIGN.md</code> + <code>BRANDGUIDE.md</code>.</p>
+  </div>
+</body>
+</html>
