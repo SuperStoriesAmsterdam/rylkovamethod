@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Type test — The Rylkova Method</title>
+  <style>
+    /* Scratch type-tester (not a production page). Same treatment in every block —
+       only the typeface changes — so the comparison is fair. */
+    @font-face { font-family:"Fraunces"; src:url("fonts/_test/Fraunces-600.woff2") format("woff2"); font-weight:600; font-display:swap; }
+    @font-face { font-family:"Fraunces"; src:url("fonts/_test/Fraunces-400.woff2") format("woff2"); font-weight:400; font-display:swap; }
+    @font-face { font-family:"Instrument Serif"; src:url("fonts/_test/InstrumentSerif-400.woff2") format("woff2"); font-weight:400; font-display:swap; }
+    @font-face { font-family:"Hanken Grotesk"; src:url("fonts/_test/Hanken-600.woff2") format("woff2"); font-weight:600; font-display:swap; }
+    @font-face { font-family:"Hanken Grotesk"; src:url("fonts/_test/Hanken-400.woff2") format("woff2"); font-weight:400; font-display:swap; }
+    @font-face { font-family:"Schibsted Grotesk"; src:url("fonts/_test/Schibsted-700.woff2") format("woff2"); font-weight:700; font-display:swap; }
+    @font-face { font-family:"Schibsted Grotesk"; src:url("fonts/_test/Schibsted-400.woff2") format("woff2"); font-weight:400; font-display:swap; }
+
+    :root { --bone:#F4F0E8; --ink:#211D17; --clay:#AB5238; --muted:#6E665A; --line:#D7CFC0; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bone); color:var(--ink);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+    .page { max-width:1100px; margin:0 auto; padding:48px 32px 96px; }
+    .intro { border-bottom:1px solid var(--line); padding-bottom:24px; margin-bottom:8px; }
+    .intro h1 { font-size:1.25rem; margin:0 0 6px; font-weight:600; }
+    .intro p { margin:0; color:var(--muted); font-size:.95rem; max-width:60ch; }
+
+    .specimen { padding:48px 0; border-bottom:1px solid var(--line); }
+    .label { display:flex; gap:12px; align-items:baseline; margin-bottom:20px;
+      font-size:.8125rem; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); }
+    .label b { color:var(--ink); font-size:.95rem; letter-spacing:0; text-transform:none; }
+    .label .pick { margin-left:auto; font-size:.75rem; }
+
+    .line { margin:0; line-height:1.04; letter-spacing:-0.01em; }
+    .line .accent { color:var(--clay); }
+    .sub { margin:14px 0 0; font-size:1.0625rem; color:var(--muted); }
+
+    /* per-font treatment */
+    .fraunces .line { font-family:"Fraunces"; font-weight:600; font-size:clamp(2.4rem,6.5vw,5.2rem); }
+    .fraunces .sub  { font-family:"Fraunces"; font-weight:400; }
+
+    .instrument .line { font-family:"Instrument Serif"; font-weight:400; font-size:clamp(2.8rem,7.5vw,6rem); letter-spacing:0; }
+    .instrument .sub  { font-family:"Instrument Serif"; font-weight:400; font-size:1.3rem; }
+
+    .hanken .line { font-family:"Hanken Grotesk"; font-weight:600; font-size:clamp(2.3rem,6vw,4.8rem); }
+    .hanken .sub  { font-family:"Hanken Grotesk"; font-weight:400; }
+
+    .schibsted .line { font-family:"Schibsted Grotesk"; font-weight:700; font-size:clamp(2.3rem,6vw,4.8rem); }
+    .schibsted .sub  { font-family:"Schibsted Grotesk"; font-weight:400; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="intro">
+      <h1>Type test — pick one</h1>
+      <p>Same line, same colour treatment — only the typeface changes. Two elegant modern serifs (not the dated kind), two clean sans. Which feels most like The Rylkova Method?</p>
+    </div>
+
+    <section class="specimen fraunces">
+      <div class="label"><b>1 · Fraunces</b> <span>serif — warm, modern, editorial</span> <span class="pick">elegant + characterful</span></div>
+      <p class="line">When the magic becomes <span class="accent">mechanism</span>.</p>
+      <p class="sub">Sustainable bodywork for high-volume therapists</p>
+    </section>
+
+    <section class="specimen instrument">
+      <div class="label"><b>2 · Instrument Serif</b> <span>serif — high-contrast, refined</span> <span class="pick">elegant + delicate</span></div>
+      <p class="line">When the magic becomes <span class="accent">mechanism</span>.</p>
+      <p class="sub">Sustainable bodywork for high-volume therapists</p>
+    </section>
+
+    <section class="specimen hanken">
+      <div class="label"><b>3 · Hanken Grotesk</b> <span>sans — clean, quiet</span> <span class="pick">schreefloos + understated</span></div>
+      <p class="line">When the magic becomes <span class="accent">mechanism</span>.</p>
+      <p class="sub">Sustainable bodywork for high-volume therapists</p>
+    </section>
+
+    <section class="specimen schibsted">
+      <div class="label"><b>4 · Schibsted Grotesk</b> <span>sans — modern, a little character</span> <span class="pick">schreefloos + confident</span></div>
+      <p class="line">When the magic becomes <span class="accent">mechanism</span>.</p>
+      <p class="sub">Sustainable bodywork for high-volume therapists</p>
+    </section>
+  </div>
+</body>
+</html>
