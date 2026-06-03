@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-02 (About pages)
+
+### About
+- Added `about-a/b/c.html` — an About Yulia page in each route's style, written
+  from the June 2 Granola transcript: Thailand→Pichet, Seattle→Brian ("the magic
+  became mechanism", "anatomy is freedom"), Rosemary Wallace (craniosacral), the
+  person-first / deep-listening thread, her "can't shut up about this work" driver,
+  and proof (14 yrs, NCBTMB #811343).
+- Wired the "About" nav link in each home route to its About page.
+
 ## 2026-06-02 (later)
 
 ### Route C
