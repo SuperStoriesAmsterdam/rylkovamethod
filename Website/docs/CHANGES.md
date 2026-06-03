@@ -12,6 +12,12 @@
   bank is structured reference.
 - New `.dev-note` placeholder-banner style per route.
 
+### Route B typography
+- Trialled Helvetica Neue, then moved to self-hosted **Hanken Grotesk** (400 / 400
+  italic / 600) per direction "modest + elegant". Dropped the bold ALL-CAPS
+  "THE MECHANISM" treatment (read as industrial) → sentence case, light weight;
+  diptych contrast now italic ("The magic.") vs roman ("The mechanism.").
+
 ### Route C typography
 - Trialled and reverted Space Grotesk for the display — kept Optima for now. The
   display face is still an open decision (a visual type-test is pending).

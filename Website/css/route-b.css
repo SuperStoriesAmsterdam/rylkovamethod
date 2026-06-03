@@ -10,6 +10,10 @@
                (e.g. Tiempos Italic).
    ========================================================================== */
 
+@font-face { font-family: "Hanken Grotesk"; src: url("../fonts/Hanken-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("../fonts/Hanken-400i.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("../fonts/Hanken-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+
 :root {
   --color-dark:    #16221E;  /* deep forest-slate — the "mechanism" ground */
   --color-darker:  #0E1714;
@@ -20,9 +24,9 @@
   --color-muted-l: #6E6452;  /* muted on sand */
   --color-gold:    #C9A24B;  /* the accent — gilt, precise */
 
-  --font-display: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
-  --font-serif:   "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif; /* alias — fully sans now; italics render as real Helvetica italic */
-  --font-body:    "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
+  --font-display: "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-serif:   "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif; /* alias — modest sans; italics render as real Hanken italic */
+  --font-body:    "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
 
   --text-sm:   0.8125rem;
   --text-base: 1rem;
@@ -48,7 +52,7 @@ body {
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--space-3); }
 @media (min-width: 1024px) { .wrap { padding: 0 var(--space-6); } }
 
-h1, h2, h3 { margin: 0; line-height: 1.05; font-weight: 600; }
+h1, h2, h3 { margin: 0; line-height: 1.05; font-weight: 500; }
 p { margin: 0 0 1em; }
 a { color: inherit; }
 
@@ -64,7 +68,7 @@ a { color: inherit; }
   padding: var(--space-3) 0; background: var(--color-darker);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.wordmark { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.02em; font-size: 1.15rem; }
+.wordmark { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.01em; font-size: 1.15rem; }
 .wordmark b { color: var(--color-gold); }
 .site-nav { display: none; gap: var(--space-4); font-size: var(--text-sm);
   letter-spacing: 0.06em; text-transform: uppercase; }
@@ -84,8 +88,8 @@ a { color: inherit; }
 .panel--magic .panel__label { color: var(--color-muted-l); }
 .panel--mech  .panel__label { color: var(--color-gold); }
 
-.panel--magic .panel__title { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: var(--text-hero); }
-.panel--mech  .panel__title { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.01em; font-size: var(--text-hero); text-transform: uppercase; }
+.panel--magic .panel__title { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.015em; font-size: var(--text-hero); }
+.panel--mech  .panel__title { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.015em; font-size: var(--text-hero); }
 .panel__body { font-size: var(--text-lg); max-width: 32ch; margin-top: var(--space-4); }
 .panel--magic .panel__body { color: var(--color-muted-l); }
 .panel--mech  .panel__body { color: var(--color-muted-d); }
@@ -103,7 +107,7 @@ a { color: inherit; }
 .section { padding: var(--space-12) 0; }
 .section--alt { background: var(--color-darker); }
 .section__head { max-width: 56ch; margin-bottom: var(--space-8); }
-.section__head h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-2xl); letter-spacing: -0.01em; }
+.section__head h2 { font-family: var(--font-display); font-weight: 500; font-size: var(--text-2xl); letter-spacing: -0.01em; }
 
 .layers { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
 @media (min-width: 768px) { .layers { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
