@@ -5,3 +5,6 @@ node_modules/
 media/
 # Production photography is delivered via CDN/R2, not committed.
 # (Inline SVG placeholders in the current build are fine to commit.)
+
+# scratch font candidates for the type-test (not for production)
+Website/fonts/_test/

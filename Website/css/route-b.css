@@ -147,6 +147,11 @@ a { color: inherit; }
 
 :focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
 
+/* placeholder banner — work-in-progress section, removed when content is finalised */
+.dev-note { display: inline-block; border: 1px dashed var(--color-gold); color: var(--color-gold);
+  font-size: var(--text-sm); letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 8px 14px; margin-bottom: var(--space-6); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }

@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-06-03
+
+### "Built to be remembered" + Training (all routes)
+- New "Built to be remembered" section (finalised copy): the didactic differentiator
+  + Yulia's words + three plain-language principles (see + understand / one structure /
+  anatomy is freedom).
+- Training section (placeholder, banner kept): 2-day modules + a knowledge bank where
+  every technique is documented along the same axes (see · anatomy · mechanics · feel ·
+  why). Dropped the earlier "spaced reminders / one-move-a-week" idea — no nagging; the
+  bank is structured reference.
+- New `.dev-note` placeholder-banner style per route.
+
+### Route C typography
+- Trialled and reverted Space Grotesk for the display — kept Optima for now. The
+  display face is still an open decision (a visual type-test is pending).
+
 ## 2026-06-02 (About pages)
 
 ### About
