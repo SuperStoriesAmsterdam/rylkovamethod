@@ -17,6 +17,9 @@
   italic / 600) per direction "modest + elegant". Dropped the bold ALL-CAPS
   "THE MECHANISM" treatment (read as industrial) → sentence case, light weight;
   diptych contrast now italic ("The magic.") vs roman ("The mechanism.").
+- Palette: dropped the dark forest backgrounds (read as massive/heavy) → fully light.
+  Warm sand "magic" panel vs cool stone "mechanism" panel on warm linen; clay accent
+  replaces the gold (gold reads cheap on light).
 
 ### Route C typography
 - Trialled and reverted Space Grotesk for the display — kept Optima for now. The
