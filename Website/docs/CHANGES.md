@@ -2,6 +2,14 @@
 
 ## 2026-06-03
 
+### Annotation tool — use the canonical shared tool
+- Replaced the placeholder localStorage tool with the canonical SuperStories tool
+  (api: annotations.superstories.com, project: "rylkova"). Feedback now persists and
+  is shared across devices & people, with localStorage fallback. Wired on all routes
+  + about pages via the `SS_ANNOTATIONS` config (set before the script). Removed the
+  custom Cloudflare Worker / .env.example / css/annotate.css — not needed, the backend
+  already exists. (Tool injects its own styles.)
+
 ### "Built to be remembered" + Training (all routes)
 - New "Built to be remembered" section (finalised copy): the didactic differentiator
   + Yulia's words + three plain-language principles (see + understand / one structure /
